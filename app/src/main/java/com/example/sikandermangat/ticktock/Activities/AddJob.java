@@ -21,9 +21,10 @@ public class AddJob extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_job);
-        jobTitle = (EditText) findViewById(R.id.jobTitle);
+        jobTitle = findViewById(R.id.jobTitle);
         firebaseObject = new FirebaseDataBaseReferences();
         myRef = firebaseObject.getMyRef();
+        System.out.println("sikander");
     }
 
     @Override
