@@ -1,0 +1,33 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.sikandermangat.ticktock.Fragments.MoreOpition">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:id="@+id/recycleView"
+        android:layout_centerHorizontal="true"
+        />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addbtn"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/button_margin"
+        android:src="@drawable/add"
+        />
+
+
+
+</FrameLayout>

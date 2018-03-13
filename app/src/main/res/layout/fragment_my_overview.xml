@@ -1,0 +1,113 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.sikandermangat.ticktock.Fragments.MyOverview">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/colorAccent"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="30dp"
+           android:layout_marginRight="15dp"
+           android:layout_marginLeft="15dp"
+           >
+
+           <Button
+               android:layout_width="wrap_content"
+               android:layout_height="30dp"
+               android:text="Last Month"
+               android:textSize="10sp"
+               android:background="@drawable/custom_border_left"
+               android:id="@+id/lastMonth"
+               />
+
+           <Button
+               android:layout_width="wrap_content"
+               android:layout_height="30dp"
+               android:text="This Month"
+               android:textSize="10sp"
+               android:background="@drawable/custom_border"
+               android:id="@+id/thisMonth"
+               android:layout_toRightOf="@+id/lastMonth"
+               />
+           <Button
+               android:layout_width="wrap_content"
+               android:layout_height="30dp"
+               android:text="Last Week"
+               android:textSize="10sp"
+               android:background="@drawable/custom_border"
+               android:id="@+id/lastWeek"
+               android:layout_toRightOf="@+id/thisMonth"
+               />
+           <Button
+               android:layout_width="wrap_content"
+               android:layout_height="30dp"
+               android:text="This Week"
+               android:textSize="10sp"
+               android:background="@drawable/custom_border"
+               android:id="@+id/thisWeek"
+               android:layout_toRightOf="@+id/lastWeek"
+               />
+
+
+       </RelativeLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:text="Today"
+            android:textSize="10sp"
+            android:background="@drawable/custom_border"
+            android:id="@+id/today"
+            />
+
+    </LinearLayout>
+    <!-- TODO: Update blank fragment layout -->
+   <com.github.mikephil.charting.charts.PieChart
+       android:layout_width="match_parent"
+       android:layout_height="250dp"
+       android:id="@+id/piechart"
+       >
+   </com.github.mikephil.charting.charts.PieChart>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:text="Total Time"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/viewtotalTime"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:gravity="right"
+            android:text="0 m"
+            android:textSize="20sp" />
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:id="@+id/overRecycleView"
+        android:layout_centerHorizontal="true"
+        />
+
+
+
+
+</LinearLayout>

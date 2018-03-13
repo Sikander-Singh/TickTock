@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.sikandermangat.ticktock">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <application
+        android:name="com.example.sikandermangat.ticktock.Helpers.OfflineFirebase"
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Activities.SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activities.CreateActivity" />
+        <activity android:name=".Activities.HomeActivity" />
+        <activity android:name=".Activities.SettingActivity" />
+        <activity android:name=".Activities.AddJob" />
+        <activity android:name=".Activities.MainActivity" />
+        <activity android:name=".Activities.EditActivity" />
+        <activity android:name=".Activities.JobList" />
+        <activity android:name=".Activities.ForgetPassword" />
+        <activity android:name=".Activities.EditTimeCard">
+        </activity>
+    </application>
+
+</manifest>

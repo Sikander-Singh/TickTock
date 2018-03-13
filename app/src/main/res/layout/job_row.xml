@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/layout_job_row"
+    android:orientation="vertical"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:textSize="30dp"
+        android:id="@+id/jobName"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="vhfgui"
+        android:background="@drawable/signout"
+        android:layout_marginTop="5dp"
+        />
+</RelativeLayout>

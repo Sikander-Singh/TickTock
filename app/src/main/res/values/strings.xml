@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">TickTock</string>
+
+    <string name="overview">Overview</string>
+    <string name="card_time">My Card Time</string>
+    <string name="time_sheet">TimeSheet</string>
+    <string name="more">More</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_job_fragment">Hello Job fragment</string>
+    <string name="hello_time_fragment">Hello Time fragment</string>
+    <string name="title_add">Add</string>
+    <string name="title_save">Save</string>
+    <string name="title_delete">Delete</string>
+    <string name="title_setting">Settings</string>
+    <string name="title_weekCal">Weekly</string>
+    <string name="title_monthCal">Monthly</string>
+    <string name="title_finder">Custom</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

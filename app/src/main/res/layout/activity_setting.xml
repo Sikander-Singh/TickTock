@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sikandermangat.ticktock.Activities.SettingActivity">
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/newPass"
+        android:textSize="20dp"
+        android:hint="New Password"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/conPass"
+        android:textSize="20dp"
+        android:hint="Confirm Password"
+        android:layout_below="@id/newPass"
+        />
+
+    <Button
+        android:id="@+id/changePass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/corner"
+        android:backgroundTint="@color/colorAccent"
+        android:text="Change Password"
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        android:layout_below="@+id/conPass"
+        />
+
+    <Button
+        android:id="@+id/signOut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="23dp"
+        android:background="@drawable/corner"
+        android:backgroundTint="@color/colorAccent"
+        android:text="Sign Out"
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        />
+</RelativeLayout>

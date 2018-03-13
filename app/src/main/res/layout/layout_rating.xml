@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="30sp"
+    android:text="Rate yourself"
+    android:textColor="@color/colorAccent"
+    />
+   <com.iarcuschin.simpleratingbar.SimpleRatingBar
+        android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/ratingBar"
+        app:srb_starSize="40dp"
+        app:srb_numberOfStars="5"
+        app:srb_rating="0"
+        app:srb_stepSize="0.5"
+        app:srb_borderColor="@color/colorAccent"
+        app:srb_fillColor="@color/colorAccent"
+        />
+<Button
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:id="@+id/submit"
+    android:text="Submit"
+    android:background="@drawable/signout"
+    android:backgroundTint="@color/colorAccent"
+    />
+
+</LinearLayout>
