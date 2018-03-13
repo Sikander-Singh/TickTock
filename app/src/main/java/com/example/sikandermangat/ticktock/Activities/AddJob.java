@@ -24,7 +24,6 @@ public class AddJob extends AppCompatActivity {
         jobTitle = findViewById(R.id.jobTitle);
         firebaseObject = new FirebaseDataBaseReferences();
         myRef = firebaseObject.getMyRef();
-        System.out.println("sikander");
     }
 
     @Override
