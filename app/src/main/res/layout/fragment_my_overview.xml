@@ -106,8 +106,4 @@
         android:id="@+id/overRecycleView"
         android:layout_centerHorizontal="true"
         />
-
-
-
-
 </LinearLayout>

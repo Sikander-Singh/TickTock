@@ -20,6 +20,9 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.borax12.materialdaterangepicker.date.DatePickerDialog;
+import com.borax12.materialdaterangepicker.time.RadialPickerLayout;
+import com.borax12.materialdaterangepicker.time.TimePickerDialog;
 import com.example.sikandermangat.ticktock.Activities.HomeActivity;
 import com.example.sikandermangat.ticktock.Activities.MainActivity;
 import com.example.sikandermangat.ticktock.Helpers.FirebaseDataBaseReferences;
@@ -49,7 +52,7 @@ import java.util.Date;
 import java.util.List;
 
 
-public class MyOverview extends Fragment {
+public class MyOverview extends Fragment implements DatePickerDialog.OnDateSetListener {
 
     private FirebaseDataBaseReferences firebaseObject;
     private DatabaseReference myRef;
@@ -147,9 +150,6 @@ public class MyOverview extends Fragment {
                     pieChart.animateY(1000);
                     pieChart.invalidate();
                 }
-
-                System.out.println("Start dateeeeeeeeeeeeeeeeee"+startDateString);
-                System.out.println("End dateeeeeeeeeeeeeeeeee"+endDateString);
                 getTimeCards(simpleDateFormat.format(startDateString),simpleDateFormat.format(endDateString));
                 lastMonth.setBackgroundResource(R.drawable.change_custom_border_left);
                 thisMonth.setBackgroundResource(R.drawable.custom_border);
@@ -181,9 +181,6 @@ public class MyOverview extends Fragment {
                     pieChart.animateY(1000);
                     pieChart.invalidate();
                 }
-
-                System.out.println("Start dateeeeeeeeeeeeeeeeee"+startDateString);
-                System.out.println("End dateeeeeeeeeeeeeeeeee"+endDateString);
                 getTimeCards(simpleDateFormat.format(startDateString),simpleDateFormat.format(endDateString));
                 lastMonth.setBackgroundResource(R.drawable.custom_border_left);
                 thisMonth.setBackgroundResource(R.drawable.change_custom_border);
@@ -217,11 +214,6 @@ public class MyOverview extends Fragment {
                 startDateString = cal.getTime();
                 cal.add(Calendar.DATE, 6);
                 endDateString = cal.getTime();
-
-
-                System.out.println("Start dateeeeeeeeeeeeeeeeee"+startDateString);
-                System.out.println("End dateeeeeeeeeeeeeeeeee"+endDateString);
-
                 getTimeCards(simpleDateFormat.format(startDateString),simpleDateFormat.format(endDateString));
                 lastMonth.setBackgroundResource(R.drawable.custom_border_left);
                 lastWeek.setBackgroundResource(R.drawable.change_custom_border);
@@ -274,7 +266,7 @@ public class MyOverview extends Fragment {
                 percentList.clear();
                 jobList.clear();
                 recyclerView.getAdapter().notifyDataSetChanged();
-                totalTime.setText("0 s");
+                totalTime.setText("0.0s");
                 if(!pieChart.isEmpty()){
 
                     pieChart.clearValues();
@@ -286,8 +278,6 @@ public class MyOverview extends Fragment {
                 cal.setTime(new Date());
                 startDateString=cal.getTime();
                 String dateString=simpleDateFormat.format(startDateString);
-
-                System.out.println("Start dateeeeeeeeeeeeeeeeee"+startDateString);
                 getTimeCards(dateString,dateString);
                 lastMonth.setBackgroundResource(R.drawable.custom_border_left);
                 today.setBackgroundResource(R.drawable.change_custom_border_left);
@@ -332,7 +322,7 @@ public class MyOverview extends Fragment {
                     }
 
 
-                    if((objDate.compareTo(start)>0 && objDate.compareTo(end)<0)|| objDate.compareTo(start)==0 ){
+                    if((objDate.compareTo(start)>0 && objDate.compareTo(end)<0) || objDate.compareTo(start)==0 || objDate.compareTo(end)==0){
 
                         if (obj.getUserId().equals(firebaseObject.getFirebaseUserid())) {
                             sum = sum + obj.getTotalTime();
@@ -457,10 +447,51 @@ public class MyOverview extends Fragment {
 
         if (item.getItemId() == R.id.navigation_finder) {
 
+            Calendar now = Calendar.getInstance();
+            DatePickerDialog dpd = DatePickerDialog.newInstance(MyOverview.this,
+                    now.get(Calendar.YEAR),
+                    now.get(Calendar.MONTH),
+                    now.get(Calendar.DAY_OF_MONTH)
+            );
 
+            dpd.show(getActivity().getFragmentManager(), "Datepickerdialog");
 
         }
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth,int yearEnd, int monthOfYearEnd, int dayOfMonthEnd) {
+
+        String startDateStr=dayOfMonth+"-"+(monthOfYear+1)+"-"+year;
+        String endDateStr=dayOfMonthEnd+"-"+(monthOfYearEnd+1)+"-"+yearEnd;
+
+        SimpleDateFormat dateFormat=new SimpleDateFormat("dd-MM-yyyy");
+        Date startDateRange=null;
+        Date endDateRange=null;
+        try {
+            startDateRange=dateFormat.parse(startDateStr);
+            endDateRange=dateFormat.parse(endDateStr);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(simpleDateFormat.format(startDateRange));
+        System.out.println(simpleDateFormat.format(endDateRange));
+        percentList.clear();
+        jobList.clear();
+        recyclerView.getAdapter().notifyDataSetChanged();
+        totalTime.setText("0.0s");
+        if(!pieChart.isEmpty()){
+
+            pieChart.clearValues();
+            pieChart.clear();
+            pieChart.animateY(1000);
+            pieChart.invalidate();
+        }
+        getTimeCards(simpleDateFormat.format(startDateRange.getTime()),simpleDateFormat.format(endDateRange.getTime()));
+
+    }
+
 }
 

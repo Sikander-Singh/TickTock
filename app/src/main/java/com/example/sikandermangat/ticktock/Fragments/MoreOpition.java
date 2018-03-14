@@ -81,7 +81,7 @@ public class MoreOpition extends Fragment {
 
                     }
                 }
-
+ 
                 adapter.notifyDataSetChanged();
             }
 

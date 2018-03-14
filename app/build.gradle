@@ -38,7 +38,7 @@ dependencies {
     compile 'com.jackandphantom.android:circularprogressbar:1.2.0'
     compile 'com.kovachcode:timePickerWithSeconds:1.0.1'
     compile 'com.iarcuschin:simpleratingbar:0.1.5'
-
+    compile 'com.borax12.materialdaterangepicker:library:1.9'
 
 
 }
